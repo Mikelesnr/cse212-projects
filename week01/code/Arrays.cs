@@ -13,7 +13,18 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // Step-by-step plan:
+        // 1. Create an array of doubles with the specified 'length'.
+        // 2. Use a for loop to fill the array.
+        // 3. Each element should be: number * (index + 1) to get the correct multiple.
+        // 4. Return the filled array.
+
+        double[] results = new double[length];
+        for (int i = 0; i < length; i++)
+        {
+            results[i] = number * (i + 1);
+        }
+        return results;
     }
 
     /// <summary>
@@ -29,5 +40,19 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // Step-by-step plan:
+        // 1. Split the list into two parts:
+        //    - Right tail: the last 'amount' elements.
+        //    - Left body: the remaining elements at the start.
+        // 2. Use GetRange to extract both slices.
+        // 3. Clear the original list and rebuild it with the right tail followed by the left body.
+
+
+        List<int> rightPart = data.GetRange(data.Count - amount, amount);
+        List<int> leftPart = data.GetRange(0, data.Count - amount);
+        data.Clear();
+        data.AddRange(rightPart);
+        data.AddRange(leftPart);
     }
 }
